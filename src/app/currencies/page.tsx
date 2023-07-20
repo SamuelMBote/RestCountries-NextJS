@@ -1,6 +1,5 @@
 import BreadCrumbs from '@/components/BreadCrumbs';
 import Currencies from '@/components/Currencies';
-
 import getAll from '@/func/getAll';
 import {Metadata} from 'next';
 import React from 'react';

@@ -9,10 +9,7 @@ type Props = {
   searchParams: {[key: string]: string | string[] | undefined};
 };
 
-export async function generateMetadata(
-  {params}: Props,
-  parent?: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({params}: Props): Promise<Metadata> {
   const id = params.country.replace(/%20| /g, ' ');
   return {
     title: `Country: ${id}`,

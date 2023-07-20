@@ -9,17 +9,14 @@ type Props = {
   searchParams: {[key: string]: string | string[] | undefined};
 };
 
-export async function generateMetadata(
-  {params, searchParams}: Props,
-  parent?: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({params}: Props): Promise<Metadata> {
   const id = params.subregions.replace(/%20| /g, ' ');
   return {
     title: `Subregion: ${id}`,
   };
 }
 
-export default async function Page({params, searchParams}: Props) {
+export default async function Page({params}: Props) {
   const countriesofSubRegion = await getSubRegion(params.subregions);
 
   return (
